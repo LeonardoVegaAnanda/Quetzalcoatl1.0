@@ -1,9 +1,9 @@
 package mx.com.ananda.ometecuhtli.quetzalcoatl.repository;
 
-import mx.com.ananda.ometecuhtli.quetzalcoatl.model.UbicacionModel;
+import mx.com.ananda.ometecuhtli.quetzalcoatl.model.entity.UbicacionSAPModel;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface IUbicacionRepository extends JpaRepository<UbicacionModel,Long> {
+public interface IUbicacionRepository extends JpaRepository<UbicacionSAPModel,Long> {
 }

@@ -1,4 +1,4 @@
-package mx.com.ananda.ometecuhtli.quetzalcoatl.model;
+package mx.com.ananda.ometecuhtli.quetzalcoatl.model.entity;
 
 import lombok.Data;
 
@@ -28,4 +28,7 @@ public class RegistrosInventarioModel {
 
     @Column(name = "registro_round")
     private Integer rondaRegistro;
+
+    @Column(name = "registro_equals")
+    private Boolean coincidenciaRegistro;
 }

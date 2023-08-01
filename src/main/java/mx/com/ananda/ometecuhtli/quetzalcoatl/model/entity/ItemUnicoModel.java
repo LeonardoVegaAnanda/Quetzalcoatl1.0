@@ -1,4 +1,4 @@
-package mx.com.ananda.ometecuhtli.quetzalcoatl.model;
+package mx.com.ananda.ometecuhtli.quetzalcoatl.model.entity;
 
 import lombok.Data;
 
@@ -25,4 +25,10 @@ public class ItemUnicoModel {
 
     @Column(name = "itemStock_unico")
     private Double cantidadUnico;
+
+    @Column(name = "codeBars_unico")
+    private String codigoBarrasUnico;
+
+    @Column(name = "whsCode_unico")
+    private String codigoAlmacenUnico;
 }

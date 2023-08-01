@@ -1,6 +1,5 @@
 package mx.com.ananda.ometecuhtli.quetzalcoatl.controller;
 
-import mx.com.ananda.ometecuhtli.quetzalcoatl.service.interfaces.IItemLocalService;
 import mx.com.ananda.ometecuhtli.quetzalcoatl.service.interfaces.IItemSAPService;
 import mx.com.ananda.ometecuhtli.quetzalcoatl.service.interfaces.IItemUnicoService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,33 +12,12 @@ import org.springframework.web.bind.annotation.*;
 public class ItemController {
 
     @Autowired
-    private IItemLocalService sItemLocal;
-
-    @Autowired
     private IItemSAPService sItemSAP;
 
     @Autowired
     private IItemUnicoService sItemUnico;
 
-    @GetMapping("/local")
-    public ResponseEntity<?> obtenerItemsLocales(){
-        return new ResponseEntity<>(sItemLocal.listItemlocal(), HttpStatus.OK);
-    }
 
-    @GetMapping("/local/{id}/ubicacion")
-    public ResponseEntity<?> obtenerUbicacionesItemLocal(){
-        return new ResponseEntity<>(sItemLocal.listUbicacionByItem(),HttpStatus.OK);
-    }
-
-    @GetMapping("/local/{id}")
-    public ResponseEntity<?> obtenerItemLocalById(@PathVariable Long idItemLocal){
-        return new ResponseEntity<>(sItemLocal.getItemLocalByOd(idItemLocal),HttpStatus.OK);
-    }
-
-    @GetMapping("/local/itemCode")
-    public ResponseEntity<?> obtenerItemByItemCode(@RequestParam String itemCode){
-        return new ResponseEntity<>(sItemLocal.getItemLocalByItemCode(itemCode),HttpStatus.OK);
-    }
 
     @GetMapping("/unico")
     public ResponseEntity<?> obtenerItemsUnicos(){
@@ -58,7 +36,7 @@ public class ItemController {
 
     @GetMapping("/sap/itemCode")
     public ResponseEntity<?> obtenerItemSAPByItemCode(@RequestParam String itemCode){
-        return new ResponseEntity<>(sItemSAP.getItemSAPByItemCode(itemCode),HttpStatus.OK);
+        return new ResponseEntity<>(sItemSAP.getItemSAPByItemCode(itemCode,"ALPC"),HttpStatus.OK);
     }
 
 }
